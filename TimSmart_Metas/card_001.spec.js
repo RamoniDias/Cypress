@@ -4,7 +4,7 @@
 describe('[METAS][BUG][FRONT] Módulo Budget - Colocar até 10 caracteres após a virgula', () => {
     it('Cenário de Teste 01:', () => {
 
-        cy.visit("https://homologacao.corptimsmart.com.br/dashboard/");
+        cy.visit("https://tim.com/");
 
     });
     
