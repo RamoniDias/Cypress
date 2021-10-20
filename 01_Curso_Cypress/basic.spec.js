@@ -37,25 +37,25 @@ describe.only('Cypress basics', () => {
 describe('Testar Login da TIM', () => {
   it('Encontrar site Tim e interagir com algum Elemento', () => {
 
-    cy.visit("https://tester1.timsmart.com.br/");
+    cy.visit("https://tim.com/");
 
     // Campo Matricula
     cy.get('#ndamatrcula-1')
       .should("have.value","" )
-      .type("9999999", { delay: 35 }); // Escrever neste Campo ou Elemento
+      .type("111111", { delay: 35 }); // Escrever neste Campo ou Elemento
     
     // Campo Senha
-    cy.get('#senha-1')
+    cy.get('#senha')
       .should("have.value", "")
-      .type("Trade@2020", { delay: 35 });
+      .type("Ramoni@0007", { delay: 35 });
 
     // Selecionar Não sou um Robô
-    cy.get('[style="width: 304px; height: 78px;"] > div > iframe')
+    cy.get('capition')
     //  .select() 
    //   .click()
 
     // Botão ENTRAR
-    cy.get('#button-35')
+    cy.get('#button')
       .click({ delay: 35 })
     
   });
