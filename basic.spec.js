@@ -1,6 +1,6 @@
 /// <reference types = "cypress" />
 
-describe('Cypress basics', () => {
+describe.only('Cypress basics', () => {
     it("Visitar um Site e Verificar o Tiítulo",() => {
 
         // Visitar uma determinada Pagina
@@ -11,9 +11,11 @@ describe('Cypress basics', () => {
       // cy.title().should("equal", "Campo de Treinamento");//should testar 
       // cy.title().should("contain", "Campo"); //Contém a palavra campo
 
+      cy.pause();   
+
        //Fazer os dois testes de uma vez outro modo - Melhor
        cy.title()
-         .should("equal", "Campo de Treinamento")
+         .should("equal", "Campo de Treinamento").debug()
          .should("contain", "Campo");
     })
     
@@ -32,28 +34,28 @@ describe('Cypress basics', () => {
     });
 });
 
-describe.only('Testar Login da TIM', () => {
+describe('Testar Login da TIM', () => {
   it('Encontrar site Tim e interagir com algum Elemento', () => {
 
-    cy.visit("https://TesterQA.tim.com/");
+    cy.visit("https://tim.com/");
 
     // Campo Matricula
-    cy.get('#matricula')
+    cy.get('#ndamatrcula-1')
       .should("have.value","" )
       .type("111111", { delay: 35 }); // Escrever neste Campo ou Elemento
     
     // Campo Senha
     cy.get('#senha')
       .should("have.value", "")
-      .type("Ramoni007", { delay: 35 });
+      .type("Ramoni@0007", { delay: 35 });
 
     // Selecionar Não sou um Robô
-    cy.get('[#Robo')
+    cy.get('capition')
     //  .select() 
    //   .click()
 
     // Botão ENTRAR
-    cy.get('#button-35')
+    cy.get('#button')
       .click({ delay: 35 })
     
   });
