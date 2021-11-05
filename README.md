@@ -101,16 +101,17 @@ Ex: [teste.spec.js]
 ```
 {
     "$schema": "https://on.cypress.io/cypress.schema.json",
-    "screenshotOnRunFailure": false,
+    "screenshotOnRunFailure": true,
+    "screenshotsFolder": "cypress/screenshots",
     "video": true,
-    "videos": true,
-    "videosFolder":"cypress/videos",
-    "videoUploadOnPasses" : true,
+    "videosFolder": "cypress/videos",
+    "videoCompression": 32,
     "chromeWebSecurity": true,
     "experimentalStudio": true,
     "baseUrl": "http://localhost:8080",
-    "defaultCommandTimeout":20000,
-    "downloadsFolder":"cypress/downloads"
+    "downloadsFolder": "cypress/downloads",
+    "integrationFolder" : "cypress/integration",
+    "defaultCommandTimeout":20000    
 }
 ```
 ```
