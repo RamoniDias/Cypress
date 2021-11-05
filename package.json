@@ -1,0 +1,24 @@
+{
+  "name": "Cypress",
+  "version": "1.0.0",
+  "description": "[![CircleCI](https://circleci.com/gh/tradeupgroup/tim_gunts/tree/main.svg?style=svg&circle-token=59f0ec1083c937c6c75a43cf24cfe37d35acc877)](https://circleci.com/gh/tradeupgroup/tim_gunts/tree/main)",
+  "main": "Describe.spec.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RamoniDias/Cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RamoniDias/Cypress/issues"
+  },
+  "homepage": "https://github.com/RamoniDias/Cypress#readme",
+  "dependencies": {
+    "cypress": "^8.7.0"
+  }
+}

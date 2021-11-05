@@ -1,0 +1,14 @@
+{
+    "$schema": "https://on.cypress.io/cypress.schema.json",
+    "screenshotOnRunFailure": true,
+    "screenshotsFolder": "cypress/screenshots",
+    "video": true,
+    "videosFolder": "cypress/videos",
+    "videoCompression": 32,
+    "chromeWebSecurity": true,
+    "experimentalStudio": true,
+    "baseUrl": "http://localhost:8080",
+    "downloadsFolder": "cypress/downloads",
+    "integrationFolder" : "cypress/integration",
+    "defaultCommandTimeout":20000
+}

@@ -97,7 +97,7 @@ Ex: [teste.spec.js]
 
 * Arquivo: [cypress.json]: aloca todas as configuração do cypress, inserir os seguintes parâmetros em formato [Json]:
 ```
-
+renomear arquivo cypress-example.json para cypress.json
 ```
 {
     "$schema": "https://on.cypress.io/cypress.schema.json",
