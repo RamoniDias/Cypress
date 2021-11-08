@@ -69,7 +69,13 @@ describe('HELPERS', () => {
     cy.visit("https://www.wcaquino.me/cypress/componentes.html")
     //Função Val passa texto
     cy.get("#formNome").invoke("val", "Texto via invoke")
-    
+    cy.window().invoke("alert", "Dá pra ver ?")// mandar um alerta
+    cy.window("APROVADO !!! ") 
+
+    //usar um elemento do        HTML    /         Tipo      /       Valor
+    cy.get("#resultado").invoke("html", '<input type="button", value="hacheado"/>')
+
+
 
 
   });
