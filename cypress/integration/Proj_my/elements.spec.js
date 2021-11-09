@@ -127,7 +127,6 @@ describe('ELEMENTOS', () => {
            .should("eql", ["natacao", "Corrida", "nada"]) 
     });
 
-
 });
 
 
