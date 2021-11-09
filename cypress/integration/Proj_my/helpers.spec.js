@@ -24,9 +24,9 @@ describe('HELPERS', () => {
 
     //const promise = new Promise((resolve, reject) => {
       
-      //setTimeout(() => { // cria sozinho a estrutura setTimeout
-     //   resolve(10)      // temos q colocar
-     // }, 500)           // só alterar o valor do tempo
+     //setTimeout(() => { // cria sozinho a estrutura setTimeout
+    //   resolve(10)      // temos q colocar
+    // }, 500)           // só alterar o valor do tempo
 
    // });
 
