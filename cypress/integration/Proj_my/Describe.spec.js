@@ -7,7 +7,7 @@
 
 // Podemos usar "skip" ou "only" para determinar qual teste
 // sera executado ou não
-
+// Descrição do teste
 describe('Cenário de Teste 01', () => {
     it('Caso de Teste 1.1', () => { })
 
