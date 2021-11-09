@@ -1,5 +1,5 @@
 /// <reference types = "cypress" />
-// Asserts para testes de comparação
+// Asserts para testes e validações de comparação
 
 it('Cenário de Teste 01: Equal = Igual', () => {
     const a = 1; // Variavel é igual a 1 ou String
