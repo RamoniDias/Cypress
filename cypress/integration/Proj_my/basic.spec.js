@@ -3,32 +3,32 @@
 describe.only('Cypress basics', () => {
     it("Visitar um Site e Verificar o Tiítulo",() => {
 
-        // Visitar uma determinada Pagina
-        cy.visit("https://wcaquino.me/cypress/componentes.html")
+      // Visitar uma determinada Pagina
+      cy.visit("https://wcaquino.me/cypress/componentes.html")
         
-       //Pegando o Título e já testando se é igual a algum nome 
+      //Pegando o Título e já testando se é igual a algum nome 
 
       // cy.title().should("equal", "Campo de Treinamento");//should testar 
-      // cy.title().should("contain", "Campo"); //Contém a palavra campo
+       // cy.title().should("contain", "Campo"); //Contém a palavra campo
 
       cy.pause();   
 
-       //Fazer os dois testes de uma vez outro modo - Melhor
-       cy.title()
+      //Fazer os dois testes de uma vez outro modo - Melhor
+      cy.title()
          .should("equal", "Campo de Treinamento").debug()
          .should("contain", "Campo");
     })
     
     it('Encontrar e interagir com um elemento', () => {
 
-        cy.visit("https://wcaquino.me/cypress/componentes.html");
+      cy.visit("https://wcaquino.me/cypress/componentes.html");
 
         //cy.get('#buttonSimple').click();//1 passo, "Click" no botão
         //cy.get('#buttonSimple').should("have.value", "Obrigado!") //2 passo, teste o botão
         
         //Outra forma melhor de fazer, "ENCADEADO"
 
-        cy.get('#buttonSimple')// 1° Pegar o Elemento 
+      cy.get('#buttonSimple')// 1° Pegar o Elemento 
           .click()             // 2° Fazer algo ou ação no Elemento interagir com elemento da tela   
           .should("have.value", "Obrigado!");// 3° Testar o Elemento       
     });
