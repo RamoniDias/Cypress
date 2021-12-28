@@ -1,14 +1,15 @@
+
 /// <reference types = "cypress" />
 
 describe('ALERT', () => {
     
     // Repete essa linha em todos os "it" em todos os grupos
     before(() => { 
-        cy.visit("https://www.wcaquino.me/cypress/componentes.html")
+      cy.visit("https://www.wcaquino.me/cypress/componentes.html")
     });
 
     beforeEach(() => { 
-        cy.reload() // carrega pagina de novo
+      cy.reload() // carrega pagina de novo
     });
 
     it('Testar "ALERT"', () => {
@@ -17,8 +18,8 @@ describe('ALERT', () => {
       
       //Validar evento do alert, pegar message's
       cy.on("window:alert", msg => {
-          console.log(msg)
-          expect(msg).to.be.equal("Alert Simples")
+        console.log(msg)
+        expect(msg).to.be.equal("Alert Simples")
       })   
     });
 
@@ -34,36 +35,38 @@ describe('ALERT', () => {
       cy.get("#alert").click().then(() =>{
 
       // esperada uma chamada na posição 0  
-        expect(stub.getCall(0)).to.be.calledWith("Alert Simples")
+        
+      expect(stub.getCall(0)).to.be.calledWith("Alert Simples")
+
       }) 
     });
 
-    it ('Testar "MODAL CANCELAR OU OK"', () => { 
+    it('Testar "MODAL CANCELAR OU OK"', () => { 
 
        //Fazer CLICK, depois Validar Eventos (confirm) e (alert): Validar Mensagens 
-       cy.get('#confirm').click()  
+      cy.get('#confirm').click()  
 
        //Validar Evento (confirm)
-       cy.on("window:confirm", msg => {
+      cy.on("window:confirm", msg => {
           console.log(msg)
           expect(msg).to.be.equal("Confirm Simples")
        })  
        //Validar Evento (alert)
-       cy.on("window:alert", msg => {
+      cy.on("window:alert", msg => {
           console.log(msg)
           expect(msg).to.be.equal("Confirmado")
        })         
         
     });
-
-    it.only('Testar: MODAL OPÇÃO NEGADO', () => {
+   
+    it('Testar: MODAL OPÇÃO NEGADO', () => {
 
       //Validar CLICK "Cancelar
       cy.on("window:confirm", msg => {
           expect(msg).to.be.equal("Confirm Simples")
           return false
       })  
-    
+      //usar o expect tem q ser desse jeito  
       cy.on("window:alert", msg => {
           expect(msg).to.be.equal("Negado")
       })   
@@ -71,5 +74,24 @@ describe('ALERT', () => {
       cy.get("#confirm").click()
         
     });
+
+     it.only('Testar "PROMPT"', () => {
+       
+       //Promisses
+       cy.window().then(win => {
+        cy.stub(win , "prompt").returns("007") //Mook de test + retorne na aplicação com este valor     
+       })
+
+       cy.on("window:confirm", msg => {
+         expect(msg).to.be.equal("Era 007")
+        })
+       
+       cy.on("window:alert", msg => {
+         expect(msg).to.be.equal(":D")
+        })
+        
+       cy.get("#prompt").click();
+
+     });
 
 });
