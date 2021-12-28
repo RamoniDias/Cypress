@@ -1,5 +1,4 @@
 
-
 /// <reference types = "cypress" />
 
 describe("TESTE: Validar IFRAME", () => {
@@ -13,24 +12,21 @@ describe("TESTE: Validar IFRAME", () => {
   });
 
   // Validar todos as mensagens de ALERT do sistema
-  it("Validar página IFRAME", () => {
+  it("Validar se Popup foi invocado", () => {
+    //usar sutub para isso usa-se o widows e a promisse e a função win, com metodo open
+    cy.window().then(win => {
+        cy.stub(win, open).as("WinOpen")//as = dando nome ao metodo open
 
-      cy.get("#frame1").then(iframe =>{
-          const body = iframe.contents().find("body")
-          cy.wrap(body).find("#tfield")
-            .type("funciona?")
-            .should("have.value", "funciona?")
-      })
-  });
+    })
 
-  it("Validar IFRAME Diretamente", () => {
+    cy.get("#buttonPopup").click()
+    cy.get("WinOpen").should("be.called")// Verificar se o popup foi chamado
 
-      cy.get("#otherButton").click()
-      cy.on("window:alert", msg => {
-        expect(msg).to.be.equal("Click OK!")     
-      })
-         
-  })
-  
+    //o Teste é só par ver se o poput foi chamado ou, unico teste a fazer
+    })
 
+    
 });
+
+
+  
