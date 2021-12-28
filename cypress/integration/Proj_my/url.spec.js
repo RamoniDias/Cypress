@@ -11,18 +11,32 @@ describe("TESTE: URL", () => {
     cy.reload(); // carrega pagina de novo
   });
 
-  // Validar todos as mensagens de ALERT do sistema
    it("Validar se Popup URL", () => {
-    //usar sutub para isso usa-se o widows e a promisse e a função win, com metodo open
-    cy.window().then(win => {
-        cy.stub(win, open).as("WinOpen")//as = dando nome ao metodo open
 
+    cy.contains("Popup2")
+        .should("have.prop", "href")// Validar a propriedade
+        .and("equal", "https://wcaquino.me/cypress/frame.html") //validar a url = site
     })
 
-    cy.get("#buttonPopup").click()
-    cy.get("WinOpen").should("be.called")// Verificar se o popup foi chamado
+    //Pegar LINK da TELA dinâmicamente
+    it("Validar Link dinâmicamente", () => {
+        cy.contains("Popup2").then($a => {
+            const href = $a.prop("href")
+            cy.visit(href)
+            //cy.get("#tfield").type("Funciona")
+        })
+    })   
+    
+    it("Validar Forçar Link abrir na msm página", () => {
+      cy.contains("Popup2")
+        .invoke("removeAttr", "target")// Remove atributo do HTML Target, evitando ele de rediricionar para outra pagina
+        .click()//Mantem na msm pagina/ Importante colocar
+        
 
-    //o Teste é só par ver se o poput foi chamado ou, unico teste a fazer
-    })
+    });
 
-});
+
+}); 
+
+
+
