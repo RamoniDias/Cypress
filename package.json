@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/RamoniDias/Cypress#readme",
   "dependencies": {
-    "cypress": "^8.7.0"
+    "cypress": "^8.7.0",
+    "cypress-xpath": "^1.6.2"
   }
 }
