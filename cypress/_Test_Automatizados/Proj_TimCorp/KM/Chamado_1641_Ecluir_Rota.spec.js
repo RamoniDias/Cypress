@@ -7,7 +7,7 @@
 describe('1641_Erro-ao-excluir-rotas', () => {
 
     before(() => { 
-        cy.visit("http://10.26.2.60:8082/")
+        cy.visit("https://tester1.timsmart.com.br/");
     });
 
     beforeEach(() => { 
