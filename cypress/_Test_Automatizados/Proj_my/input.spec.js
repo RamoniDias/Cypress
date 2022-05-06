@@ -7,6 +7,9 @@ describe("Testar Input", () => {
   });
 
   it("Input String", () => {
-    cy, get();
+    cy.get("#formNome").should("have.value", "");
+    cy.get("#formNome").type("Ramoni");
+    cy.get("#formNome").should("have.value", "Ramoni");
+    cy.get("#formNome").should("not.have.value", "");
   });
 });
